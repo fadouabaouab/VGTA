@@ -6,17 +6,21 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
+@DiscriminatorColumn(name="t_team")
+@DiscriminatorValue("team")
 public class Team implements Serializable {
 
 	private int id_team;
+	private int max_members;
 	private static final long serialVersionUID = 1L;
 	private List<Gamer> gamers;
 
 	public Team() {
 	}
 
-	public Team(int id_team, List<Gamer> gamers) {
+	public Team(int id_team, int max_members, List<Gamer> gamers) {
 		this.id_team = id_team;
+		this.max_members = max_members;
 		this.gamers = gamers;
 	}
 
@@ -42,5 +46,15 @@ public class Team implements Serializable {
 	public void setGamers(List<Gamer> gamers) {
 		this.gamers = gamers;
 	}
+
+	public int getMax_members() {
+		return max_members;
+	}
+
+	public void setMax_members(int max_members) {
+		this.max_members = max_members;
+	}
+	
+	
 
 }
