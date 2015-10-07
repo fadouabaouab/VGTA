@@ -18,6 +18,14 @@ public class Role implements Serializable {
 	public Role() {
 	}
 
+	
+	public Role(boolean isVip, boolean isactivemember, boolean isadmincouncil) {
+		this.isVip = isVip;
+		this.isactivemember = isactivemember;
+		this.isadmincouncil = isadmincouncil;
+	}
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getId() {
