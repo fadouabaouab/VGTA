@@ -10,8 +10,12 @@ import tn.esprit.thewalkingdev.entites.Event;
 public interface GestionEventRemote {
 
 	Boolean addEvent(Event event);
+
 	Boolean updateEvent(Event event);
+
 	Boolean deleteEvent(Event event);
+
 	Event findEventbyId(Integer idEvent);
+
 	List<Event> findAllEvents();
 }

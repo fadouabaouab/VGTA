@@ -3,9 +3,9 @@ package tn.esprit.thewalkingdev.services.gestionEvent;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import tn.esprit.thewalkingdev.entites.Event;
 
@@ -14,11 +14,12 @@ import tn.esprit.thewalkingdev.entites.Event;
  */
 @Stateless
 public class GestionEvent implements GestionEventRemote, GestionEventLocal {
-@PersistenceContext(unitName="vgta")
-    EntityManager entityManager;
-    public GestionEvent() {
-        // TODO Auto-generated constructor stub
-    }
+	@PersistenceContext(unitName = "vgta")
+	EntityManager entityManager;
+
+	public GestionEvent() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public Boolean addEvent(Event event) {
@@ -28,7 +29,7 @@ public class GestionEvent implements GestionEventRemote, GestionEventLocal {
 		} catch (Exception e) {
 			return false;
 		}
-		
+
 	}
 
 	@Override
@@ -44,7 +45,7 @@ public class GestionEvent implements GestionEventRemote, GestionEventLocal {
 	@Override
 	public Boolean deleteEvent(Event event) {
 		try {
-			entityManager.remove(entityManager.merge(event));
+			entityManager.remove(event);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -53,19 +54,19 @@ public class GestionEvent implements GestionEventRemote, GestionEventLocal {
 
 	@Override
 	public Event findEventbyId(Integer idEvent) {
-		Event event=null;
+		Event event = null;
 		try {
-			event=entityManager.find(Event.class, idEvent);
-			
+			event = entityManager.find(Event.class, idEvent);
+
 		} catch (Exception e) {
-			
+
 		}
 		return event;
 	}
 
 	@Override
 	public List<Event> findAllEvents() {
-		javax.persistence.Query query=entityManager.createQuery("select e from Event e");
+		Query query = entityManager.createQuery("select e from Event e");
 		return query.getResultList();
 	}
 

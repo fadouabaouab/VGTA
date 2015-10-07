@@ -44,7 +44,7 @@ public class GestionTypeEvent implements GestionTypeEventRemote, GestionTypeEven
 	@Override
 	public Boolean deleteTypeEvent(TypeEvent typeevent) {
 		try {
-			entityManager.remove(entityManager.merge(typeevent));
+			entityManager.remove(typeevent);
 			return true;
 		} catch (Exception e) {
 			return false;

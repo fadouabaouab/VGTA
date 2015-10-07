@@ -44,7 +44,7 @@ public class GestionVenue implements GestionVenueRemote, GestionVenueLocal {
 	@Override
 	public Boolean deleteVenue(Venue venue) {
 		try {
-			entityManager.remove(entityManager.merge(venue));
+			entityManager.remove(venue);
 			return true;
 		} catch (Exception e) {
 			return false;
