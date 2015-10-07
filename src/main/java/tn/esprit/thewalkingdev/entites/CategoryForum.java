@@ -22,8 +22,22 @@ public class CategoryForum implements Serializable {
 	 private List<Subject> subjects;
 
 	public CategoryForum() {
-		super();
+	 
 	}   
+	public CategoryForum(int id_category, String label) {
+	 
+		this.id_category = id_category;
+		this.label = label;
+		 
+	}
+	
+	public CategoryForum(int id_category, String label, List<Subject> subjects) {
+		 
+		this.id_category = id_category;
+		this.label = label;
+		this.subjects = subjects;
+	}
+
 	@Id    
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getId_category() {
