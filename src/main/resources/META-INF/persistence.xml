@@ -28,6 +28,8 @@
 		<class>tn.esprit.thewalkingdev.entites.TypeEquipment</class>
 		<class>tn.esprit.thewalkingdev.entites.TypeEvent</class>
 		<class>tn.esprit.thewalkingdev.entites.Venue</class>
+		<class>tn.esprit.thewalkingdev.entites.Vote</class>
+		<class>tn.esprit.thewalkingdev.entites.VotePk</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true" />

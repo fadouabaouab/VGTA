@@ -2,6 +2,7 @@ package tn.esprit.thewalkingdev.entites;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.sql.Blob;
 
 import javax.persistence.*;
 
@@ -13,16 +14,19 @@ public class Articles implements Serializable {
 	private String text;
 	private static final long serialVersionUID = 1L;
 	private TeamMedia teamMedia;
+	private Blob picture;
 
 	public Articles() {
 	}
 
 	public Articles(int id_article, String name_article, String text,
-			TeamMedia teamMedia) {
+			TeamMedia teamMedia, Blob picture) {
+
 		this.id_article = id_article;
 		this.name_article = name_article;
 		this.text = text;
 		this.teamMedia = teamMedia;
+		this.picture = picture;
 	}
 
 	@Id
@@ -61,5 +65,12 @@ public class Articles implements Serializable {
 		this.teamMedia = teamMedia;
 	}
 
-	
+	public Blob getPicture() {
+		return picture;
+	}
+
+	public void setPicture(Blob picture) {
+		this.picture = picture;
+	}
+
 }

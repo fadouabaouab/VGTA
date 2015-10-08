@@ -27,12 +27,16 @@ public class Gamer implements Serializable {
 	private Team team;
 	private List<Publication> publications;
 	private List<Trophy> trophies;
+	private List<Vote> votes;
 
 	public Gamer() {
 	}
+	
 	public Gamer(String lastName, int id, String firstName, Integer age,
 			String email, String pwd, int rank, int record, Role role,
-			Team team, List<Publication> publications, List<Trophy> trophies) {
+			Team team, List<Publication> publications, List<Trophy> trophies,
+			List<Vote> votes) {
+		super();
 		this.lastName = lastName;
 		this.id = id;
 		this.firstName = firstName;
@@ -45,9 +49,8 @@ public class Gamer implements Serializable {
 		this.team = team;
 		this.publications = publications;
 		this.trophies = trophies;
+		this.votes = votes;
 	}
-
-
 
 	public String getLastName() {
 		return this.lastName;
@@ -152,6 +155,13 @@ public class Gamer implements Serializable {
 
 	public void setTrophies(List<Trophy> trophies) {
 		this.trophies = trophies;
+	}
+	@OneToMany(mappedBy="gamer")
+	public List<Vote> getVotes() {
+		return votes;
+	}
+	public void setVotes(List<Vote> votes) {
+		this.votes = votes;
 	}
 	
 }
