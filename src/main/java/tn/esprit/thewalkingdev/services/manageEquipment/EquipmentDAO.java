@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import tn.esprit.thewalkingdev.entites.Equipment;
-import tn.esprit.thewalkingdev.services.manageEquipment.contract.EquipmentDAOLocal;
-import tn.esprit.thewalkingdev.services.manageEquipment.contract.EquipmentDAORemote;
+import tn.esprit.thewalkingdev.manageEquipment.contract.EquipmentDAOLocal;
+import tn.esprit.thewalkingdev.manageEquipment.contract.EquipmentDAORemote;
 
 /**
  * Session Bean implementation class EquipementDAO

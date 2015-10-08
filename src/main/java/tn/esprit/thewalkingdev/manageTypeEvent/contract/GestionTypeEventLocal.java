@@ -1,13 +1,13 @@
-package tn.esprit.thewalkingdev.services.manageTypeEvent.contract;
+package tn.esprit.thewalkingdev.manageTypeEvent.contract;
 
 import java.util.List;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
 import tn.esprit.thewalkingdev.entites.TypeEvent;
 
-@Remote
-public interface GestionTypeEventRemote {
+@Local
+public interface GestionTypeEventLocal {
 
 	Boolean addTypeEvent(TypeEvent typeevent);
 

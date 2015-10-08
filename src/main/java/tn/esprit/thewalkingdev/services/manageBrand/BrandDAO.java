@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import tn.esprit.thewalkingdev.entites.Brand;
-import tn.esprit.thewalkingdev.services.manageBrand.contract.BrandDAOLocal;
-import tn.esprit.thewalkingdev.services.manageBrand.contract.BrandDAORemote;
+import tn.esprit.thewalkingdev.manageBrand.contract.BrandDAOLocal;
+import tn.esprit.thewalkingdev.manageBrand.contract.BrandDAORemote;
 
 /**
  * Session Bean implementation class BrandDAO

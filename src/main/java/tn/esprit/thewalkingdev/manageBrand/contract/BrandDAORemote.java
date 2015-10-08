@@ -1,4 +1,4 @@
-package tn.esprit.thewalkingdev.services.manageBrand.contract;
+package tn.esprit.thewalkingdev.manageBrand.contract;
 
 import java.util.List;
 

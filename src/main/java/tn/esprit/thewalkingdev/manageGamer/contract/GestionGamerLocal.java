@@ -1,14 +1,13 @@
-package tn.esprit.thewalkingdev.services.manageGamer.contract;
+package tn.esprit.thewalkingdev.manageGamer.contract;
 
 import java.util.List;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
 import tn.esprit.thewalkingdev.entites.Gamer;
 
-@Remote
-public interface GestionGamerRemote {
-
+@Local
+public interface GestionGamerLocal {
 	Boolean addGamer(Gamer gamer);
 
 	Boolean updateGamer(Gamer gamer);

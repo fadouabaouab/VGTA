@@ -1,4 +1,4 @@
-package tn.esprit.thewalkingdev.services.manageEvent.contract;
+package tn.esprit.thewalkingdev.manageEvent.contract;
 
 import java.util.List;
 

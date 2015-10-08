@@ -8,8 +8,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import tn.esprit.thewalkingdev.entites.Gamer;
-import tn.esprit.thewalkingdev.services.manageGamer.contract.GestionGamerLocal;
-import tn.esprit.thewalkingdev.services.manageGamer.contract.GestionGamerRemote;
+import tn.esprit.thewalkingdev.manageGamer.contract.GestionGamerLocal;
+import tn.esprit.thewalkingdev.manageGamer.contract.GestionGamerRemote;
 
 /**
  * Session Bean implementation class GestionGamer

@@ -1,4 +1,4 @@
-package tn.esprit.thewalkingdev.services.manageEquipment.contract;
+package tn.esprit.thewalkingdev.manageEquipment.contract;
 
 import java.util.List;
 

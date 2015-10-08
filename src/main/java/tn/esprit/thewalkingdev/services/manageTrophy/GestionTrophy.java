@@ -1,4 +1,4 @@
-package tn.esprit.thewalkingdev.manageTrophy;
+package tn.esprit.thewalkingdev.services.manageTrophy;
 
 import java.util.List;
 

@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 
 import tn.esprit.thewalkingdev.entites.TypeEvent;
 import tn.esprit.thewalkingdev.entites.Venue;
-import tn.esprit.thewalkingdev.services.manageVenue.contract.GestionVenueLocal;
-import tn.esprit.thewalkingdev.services.manageVenue.contract.GestionVenueRemote;
+import tn.esprit.thewalkingdev.manageVenue.contract.GestionVenueLocal;
+import tn.esprit.thewalkingdev.manageVenue.contract.GestionVenueRemote;
 
 /**
  * Session Bean implementation class GestionVenue
