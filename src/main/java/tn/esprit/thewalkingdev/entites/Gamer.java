@@ -127,8 +127,6 @@ public class Gamer implements Serializable {
 		this.publications = publications;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "role")
 	public Role getRole() {
 		return role;
 	}
