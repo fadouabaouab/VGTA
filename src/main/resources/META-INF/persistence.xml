@@ -15,7 +15,6 @@
 		<class>tn.esprit.thewalkingdev.entites.Gamer</class>
 		<class>tn.esprit.thewalkingdev.entites.Publication</class>
 		<class>tn.esprit.thewalkingdev.entites.PublicationPK</class>
-		<class>tn.esprit.thewalkingdev.entites.Role</class>
 		<class>tn.esprit.thewalkingdev.entites.Sponsor</class>
 		<class>tn.esprit.thewalkingdev.entites.Subject</class>
 		<class>tn.esprit.thewalkingdev.entites.Team</class>
