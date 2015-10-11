@@ -1,4 +1,4 @@
-package tn.esprit.thewalkingdev.manageBrand.contract;
+package tn.esprit.thewalkingdev.services.contract;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.ejb.Local;
 import tn.esprit.thewalkingdev.entites.Brand;
 
 @Local
-public interface BrandDAOLocal {
+public interface BrandLocal {
 	Boolean addBrand(Brand Brand);
 	Boolean updateBrand(Brand Brand);
 	Boolean deleteBrand(Brand Brand);
