@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
+
 public class Sponsor implements Serializable {
 
 	private int id_sponsor;
@@ -115,6 +116,19 @@ public class Sponsor implements Serializable {
 	public void setDateE(String dateE) {
 		DateE = dateE;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Sponsor [id_sponsor=" + id_sponsor + ", name_sponsor="
+				+ name_sponsor + ", name_Contact_sponsor="
+				+ name_Contact_sponsor + ", email=" + email + ", DateS="
+				+ DateS + ", DateE=" + DateE + ", contributions="
+				+ contributions.toString() + ", teamSponsoring=" + teamSponsoring.toString() + "]";
+	}
+
+
+	
 	
 	
 
