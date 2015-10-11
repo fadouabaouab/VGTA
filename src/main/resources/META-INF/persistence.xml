@@ -30,11 +30,11 @@
 		<class>tn.esprit.thewalkingdev.entites.Vote</class>
 		<class>tn.esprit.thewalkingdev.entites.VotePk</class>
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="javax.persistence.schema-generation.database.action"
-				value="drop-and-create" />
+				value="none" />
 		</properties>
 	</persistence-unit>
 

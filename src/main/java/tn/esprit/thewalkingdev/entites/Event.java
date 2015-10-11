@@ -44,6 +44,40 @@ public class Event implements Serializable {
 		this.venue = venue;
 		this.teamOrganisation = teamOrganisation;
 	}
+	
+
+	public Event(String name_event, Date date_event, int numberOfReservation,
+			String owner, boolean streaming, boolean isTournament,
+			List<Contribution> contributions, List<Trophy> trophies,
+			TypeEvent typeEvent, Venue venue, TeamOrganisation teamOrganisation) {
+		super();
+		this.name_event = name_event;
+		this.date_event = date_event;
+		this.numberOfReservation = numberOfReservation;
+		this.owner = owner;
+		this.streaming = streaming;
+		this.isTournament = isTournament;
+		this.contributions = contributions;
+		this.trophies = trophies;
+		this.typeEvent = typeEvent;
+		this.venue = venue;
+		this.teamOrganisation = teamOrganisation;
+	}
+
+	public Event(String name_event, Date date_event, int numberOfReservation,
+			String owner, boolean streaming, boolean isTournament,
+			TypeEvent typeEvent, Venue venue, TeamOrganisation teamOrganisation) {
+		
+		this.name_event = name_event;
+		this.date_event = date_event;
+		this.numberOfReservation = numberOfReservation;
+		this.owner = owner;
+		this.streaming = streaming;
+		this.isTournament = isTournament;
+		this.typeEvent = typeEvent;
+		this.venue = venue;
+		this.teamOrganisation = teamOrganisation;
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
