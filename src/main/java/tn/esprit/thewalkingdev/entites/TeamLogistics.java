@@ -6,8 +6,10 @@ import java.util.List;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="t_logistics")
 @DiscriminatorValue("t_logistics")
 public class TeamLogistics extends Team implements Serializable {
 

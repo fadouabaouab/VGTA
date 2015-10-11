@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
+@Table(name="team")
+@Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="t_team")
 @DiscriminatorValue("team")
 public class Team implements Serializable {
