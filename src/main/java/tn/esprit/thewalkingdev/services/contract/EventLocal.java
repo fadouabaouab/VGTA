@@ -13,7 +13,7 @@ public interface EventLocal {
 
 	Boolean updateEvent(Event event);
 
-	Boolean deleteEvent(Event event);
+	void deleteEvent(int id);
 
 	Event findEventbyId(Integer idEvent);
 

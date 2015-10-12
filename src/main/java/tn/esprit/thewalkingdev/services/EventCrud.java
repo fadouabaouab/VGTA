@@ -25,34 +25,25 @@ public class EventCrud implements EventRemote, EventLocal {
 
 	@Override
 	public Boolean addEvent(Event event) {
-	
-			entityManager.persist(event);
-			return true;
-		
+
+		entityManager.persist(event);
+		return true;
 
 	}
 
 	@Override
 	public Boolean updateEvent(Event event) {
-		
-			entityManager.merge(event);
-			return true;
-		
-	}
 
-	@Override
-	public Boolean deleteEvent(Event event) {
-	
-			entityManager.remove(event);
-			return true;
-		
+		entityManager.merge(event);
+		return true;
+
 	}
 
 	@Override
 	public Event findEventbyId(Integer idEvent) {
 		Event event = null;
-		
-			event = entityManager.find(Event.class, idEvent);
+
+		event = entityManager.find(Event.class, idEvent);
 
 		return event;
 	}
@@ -61,6 +52,12 @@ public class EventCrud implements EventRemote, EventLocal {
 	public List<Event> findAllEvents() {
 		Query query = entityManager.createQuery("select e from Event e");
 		return query.getResultList();
+	}
+
+	@Override
+	public void deleteEvent(int  id) {
+		entityManager.remove(findEventbyId(id));
+
 	}
 
 }
