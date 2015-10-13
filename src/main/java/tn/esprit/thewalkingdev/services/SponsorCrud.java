@@ -47,9 +47,11 @@ public class SponsorCrud implements SponsorLocal,SponsorRemote{
 
 	@Override
 	public List<Sponsor> findAllSponsors() {
-		List<Sponsor> listSponsor;
-		Query query=entityManager.createNamedQuery("select a from Sponsor");
+		
+		
+		javax.persistence.Query query= entityManager.createQuery("select a from Sponsor a");
 		return query.getResultList();
+	
 	}
 
 }
