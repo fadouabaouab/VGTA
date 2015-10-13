@@ -13,7 +13,7 @@ public class TeamSponsoring extends Team implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	List<Sponsor> sponsors;
+	
 
 	public TeamSponsoring() {
 		super();
@@ -22,17 +22,10 @@ public class TeamSponsoring extends Team implements Serializable {
 
 	public TeamSponsoring(List<Sponsor> sponsors) {
 		super();
-		this.sponsors = sponsors;
+	
 	}
 
-	@OneToMany(mappedBy="teamSponsoring")
-	public List<Sponsor> getSponsors() {
-		return sponsors;
-	}
 
-	public void setSponsors(List<Sponsor> sponsors) {
-		this.sponsors = sponsors;
-	}
 	
 	
 	

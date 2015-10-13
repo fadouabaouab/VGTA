@@ -50,6 +50,10 @@ public class Brand implements Serializable {
 		this.label = label;
 		this.equipments = equipments;
 	}
+	@Override
+	public String toString() {
+		return label ;
+	}
 	
 	
 	
