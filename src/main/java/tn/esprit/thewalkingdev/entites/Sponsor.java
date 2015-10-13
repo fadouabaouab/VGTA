@@ -12,7 +12,6 @@ public class Sponsor implements Serializable {
 
 	private int id_sponsor;
 	private String name_sponsor;
-	private TeamSponsoring teamSponsoring;
 	private List<Contribution> contributions;
 	private static final long serialVersionUID = 1L;
   private String name_contact_sponsor;
@@ -22,25 +21,21 @@ public class Sponsor implements Serializable {
 	public Sponsor() {
 	}
 	
-	public Sponsor(int id_sponsor, String name_sponsor,
-			TeamSponsoring teamSponsoring, List<Contribution> contributions,
+	public Sponsor(int id_sponsor, String name_sponsor, List<Contribution> contributions,
 			String name_contact_sponsor, String email) {
 		super();
 		this.id_sponsor = id_sponsor;
 		this.name_sponsor = name_sponsor;
-		this.teamSponsoring = teamSponsoring;
 		this.contributions = contributions;
 		this.name_contact_sponsor = name_contact_sponsor;
 		this.email = email;
 	}
 
-	public Sponsor(String name_sponsor,
-			TeamSponsoring teamSponsoring, List<Contribution> contributions,
+	public Sponsor(String name_sponsor, List<Contribution> contributions,
 			String name_contact_sponsor, String email) {
 		super();
 		
 		this.name_sponsor = name_sponsor;
-		this.teamSponsoring = teamSponsoring;
 		this.contributions = contributions;
 		this.name_contact_sponsor = name_contact_sponsor;
 		this.email = email;
@@ -84,15 +79,7 @@ public class Sponsor implements Serializable {
 		this.name_sponsor = name_sponsor;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name = "teamSponsoring")
-	public TeamSponsoring getTeamSponsoring() {
-		return teamSponsoring;
-	}
 
-	public void setTeamSponsoring(TeamSponsoring teamSponsoring) {
-		this.teamSponsoring = teamSponsoring;
-	}
 
 	@OneToMany(mappedBy="sponsor")
 	public List<Contribution> getContributions() {
