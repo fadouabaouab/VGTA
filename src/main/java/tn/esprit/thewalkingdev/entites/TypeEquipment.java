@@ -46,4 +46,9 @@ public class TypeEquipment implements Serializable {
 		this.equipments = equipments;
 	}
 
+	@Override
+	public String toString() {
+		return  typeEq ;
+	}
+
 }
