@@ -63,13 +63,4 @@ public class TypeEventCrud implements TypeEventRemote,
 		return query.getResultList();
 	}
 
-	@Override
-	public List<String> findAllLabelEvent() {
-		javax.persistence.Query query = entityManager
-				.createQuery("select label from TypeEvent t");
-		return query.getResultList();
-	}
-
-	
-
 }

@@ -20,11 +20,17 @@ public class Venue implements Serializable {
 	}
 
 	public Venue(int id_venue, String label, String adress, List<Event> events) {
-		super();
+		
 		this.id_venue = id_venue;
 		this.label = label;
 		this.adress = adress;
 		this.setEvents(events);
+	}
+	
+	public Venue(String label, String adress) {
+		
+		this.label = label;
+		this.adress = adress;
 	}
 
 	@Id

@@ -17,6 +17,11 @@ public class TypeEvent implements Serializable {
 
 	public TypeEvent() {
 	}
+	
+	public TypeEvent(String label) {
+		
+		this.label = label;
+	}
 
 	@Id
 	public int getId() {

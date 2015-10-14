@@ -19,5 +19,4 @@ public interface TypeEventRemote {
 
 	List<TypeEvent> findAllTypeEvent();
 
-	List<String> findAllLabelEvent();
 }
