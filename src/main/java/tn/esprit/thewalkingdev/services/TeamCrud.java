@@ -54,4 +54,10 @@ public class TeamCrud implements TeamLocal, TeamRemote {
 	
 	}
 
+	@Override
+	public List<String> findAllNameTeamOrganisation() {
+		javax.persistence.Query query = entityManager.createQuery("select name from team t where t.DTYPE='t_organisation'");
+		return query.getResultList();
+	}
+
 }

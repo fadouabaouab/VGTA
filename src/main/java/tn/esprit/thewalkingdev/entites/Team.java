@@ -14,17 +14,24 @@ public class Team implements Serializable {
 
 	private int id_team;
 	private int max_members;
+	private String name;
 	private static final long serialVersionUID = 1L;
 	private List<Gamer> gamers;
 
 	public Team() {
 	}
 
-	public Team(int id_team, int max_members, List<Gamer> gamers) {
+	
+
+	public Team(int id_team, int max_members, String name, List<Gamer> gamers) {
+	
 		this.id_team = id_team;
 		this.max_members = max_members;
+		this.name = name;
 		this.gamers = gamers;
 	}
+
+
 
 	public Team(int id_team) {
 		this.id_team = id_team;
@@ -55,6 +62,14 @@ public class Team implements Serializable {
 
 	public void setMax_members(int max_members) {
 		this.max_members = max_members;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

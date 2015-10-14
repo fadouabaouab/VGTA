@@ -18,4 +18,6 @@ public interface VenueLocal {
 	Venue findVenueById(Integer idVenue);
 
 	List<Venue> findAllVenue();
+
+	List<String> findAllLabelVenue();
 }
