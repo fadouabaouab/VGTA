@@ -6,10 +6,6 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name="team")
-@Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="t_team")
-@DiscriminatorValue("team")
 public class Team implements Serializable {
 
 	private int id_team;
@@ -17,6 +13,10 @@ public class Team implements Serializable {
 	private String name;
 	private static final long serialVersionUID = 1L;
 	private List<Gamer> gamers;
+	private List<Article> articles;
+	private List<Equipment> equipements;
+	private List<Sponsor> sponsors;
+	private List<Event> events;
 
 	public Team() {
 	}
@@ -24,7 +24,6 @@ public class Team implements Serializable {
 	
 
 	public Team(int id_team, int max_members, String name, List<Gamer> gamers) {
-	
 		this.id_team = id_team;
 		this.max_members = max_members;
 		this.name = name;
@@ -71,7 +70,54 @@ public class Team implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+
+	@OneToMany(mappedBy="teamMedia")
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
+
+
+	//@OneToMany(mappedBy="teamLogistics")
+	public List<Equipment> getEquipements() {
+		return equipements;
+	}
+
+
+
+	public void setEquipements(List<Equipment> equipements) {
+		this.equipements = equipements;
+	}
+
+
+	//@OneToMany(mappedBy="teamSponsor")
+	public List<Sponsor> getSponsors() {
+		return sponsors;
+	}
+
+
+
+	public void setSponsors(List<Sponsor> sponsors) {
+		this.sponsors = sponsors;
+	}
+
+
+	@OneToMany(mappedBy="teamOrganisation")
+	public List<Event> getEvents() {
+		return events;
+	}
+
+
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
 	
 
 }
