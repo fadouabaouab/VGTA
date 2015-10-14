@@ -18,6 +18,8 @@ public class Sponsor implements Serializable {
   private String email;
   private Date dateStart;
   private Date dateEnd;
+  private Team teamSponsor;
+  
 	public Sponsor() {
 	}
 	
@@ -123,6 +125,19 @@ public class Sponsor implements Serializable {
 	public void setDateEnd(Date dateEnd) {
 		this.dateEnd = dateEnd;
 	}
+
+	@ManyToOne
+	@JoinColumn(name = "teamSponsor")
+	public Team getTeamSponsor() {
+		return teamSponsor;
+	}
+
+	public void setTeamSponsor(Team teamSponsor) {
+		this.teamSponsor = teamSponsor;
+	}
+
+
+	
 
 	
 
