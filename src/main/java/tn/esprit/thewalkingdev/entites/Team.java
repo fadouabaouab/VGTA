@@ -84,7 +84,7 @@ public class Team implements Serializable {
 	}
 
 
-	//@OneToMany(mappedBy="teamLogistics")
+	@OneToMany(mappedBy="teamLogistics")
 	public List<Equipment> getEquipements() {
 		return equipements;
 	}
@@ -96,7 +96,7 @@ public class Team implements Serializable {
 	}
 
 
-	//@OneToMany(mappedBy="teamSponsor")
+	@OneToMany(mappedBy="teamSponsor")
 	public List<Sponsor> getSponsors() {
 		return sponsors;
 	}
