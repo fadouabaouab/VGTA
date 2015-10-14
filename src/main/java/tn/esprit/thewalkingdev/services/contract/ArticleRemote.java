@@ -4,19 +4,19 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-import tn.esprit.thewalkingdev.entites.Articles;
+import tn.esprit.thewalkingdev.entites.Article;
 
 
 @Remote
 public interface ArticleRemote {
 
-	Boolean addArticle(Articles article);
+	Boolean addArticle(Article article);
 
-	Boolean updateArticle(Articles article);
+	Boolean updateArticle(Article article);
 
 	void deleteArticle(int id);
 
-	Articles findArticlebyId(Integer idArticle);
+	Article findArticlebyId(Integer idArticle);
 
-	List<Articles> findAllArticles();
+	List<Article> findAllArticles();
 }

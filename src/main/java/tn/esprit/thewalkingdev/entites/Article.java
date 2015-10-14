@@ -2,27 +2,26 @@ package tn.esprit.thewalkingdev.entites;
 
 import java.io.Serializable;
 import java.lang.String;
-import java.sql.Blob;
 import java.util.Date;
 
 import javax.persistence.*;
 
 @Entity
-public class Articles implements Serializable {
+public class Article implements Serializable {
 
 	private int id_article;
 	private String title;
 	private String text;
 	private static final long serialVersionUID = 1L;
-	private TeamMedia teamMedia;
-	private Blob image;
+	private Team teamMedia;
+	private byte[]  image;
 	private Date pubDate;
 
-	public Articles() {
+	public Article() {
 	}
 
 
-	public Articles(String title, String text, TeamMedia teamMedia, Blob image,
+	public Article(String title, String text, Team teamMedia, byte[] image,
 			Date pubDate) {
 		super();
 		this.title = title;
@@ -61,19 +60,21 @@ public class Articles implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "teamMedia")
-	public TeamMedia getTeamMedia() {
+	public Team getTeamMedia() {
 		return teamMedia;
 	}
 
-	public void setTeamMedia(TeamMedia teamMedia) {
+	public void setTeamMedia(Team teamMedia) {
 		this.teamMedia = teamMedia;
 	}
 
-	public Blob getImage() {
+	@Lob
+	@Basic(fetch=FetchType.LAZY)
+	public byte[] getImage() {
 		return image;
 	}
 
-	public void setImage(Blob image) {
+	public void setImage(byte[] image) {
 		this.image = image;
 	}
 

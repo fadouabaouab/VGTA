@@ -21,7 +21,7 @@ public class Event implements Serializable {
 	private List<Trophy> trophies;
 	private TypeEvent typeEvent;
 	private Venue venue;
-	private TeamOrganisation teamOrganisation;
+	private Team teamOrganisation;
 	private static final long serialVersionUID = 1L;
 
 	public Event() {
@@ -30,7 +30,7 @@ public class Event implements Serializable {
 	public Event(int id_event, String name_event, Date date_event,
 			int numberOfReservation, String owner, boolean streaming,
 			boolean isTournament, List<Contribution> contributions,
-			TypeEvent typeEvent, Venue venue, TeamOrganisation teamOrganisation) {
+			TypeEvent typeEvent, Venue venue, Team teamOrganisation) {
 
 		this.id_event = id_event;
 		this.name_event = name_event;
@@ -49,7 +49,7 @@ public class Event implements Serializable {
 	public Event(String name_event, Date date_event, int numberOfReservation,
 			String owner, boolean streaming, boolean isTournament,
 			List<Contribution> contributions, List<Trophy> trophies,
-			TypeEvent typeEvent, Venue venue, TeamOrganisation teamOrganisation) {
+			TypeEvent typeEvent, Venue venue, Team teamOrganisation) {
 		super();
 		this.name_event = name_event;
 		this.date_event = date_event;
@@ -66,7 +66,7 @@ public class Event implements Serializable {
 
 	public Event(String name_event, Date date_event, int numberOfReservation,
 			String owner, boolean streaming, boolean isTournament,
-			TypeEvent typeEvent, Venue venue, TeamOrganisation teamOrganisation) {
+			TypeEvent typeEvent, Venue venue, Team teamOrganisation) {
 		
 		this.name_event = name_event;
 		this.date_event = date_event;
@@ -150,11 +150,11 @@ public class Event implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "teamOrganisation")
-	public TeamOrganisation getTeamOrganisation() {
+	public Team getTeamOrganisation() {
 		return teamOrganisation;
 	}
 
-	public void setTeamOrganisation(TeamOrganisation teamOrganisation) {
+	public void setTeamOrganisation(Team teamOrganisation) {
 		this.teamOrganisation = teamOrganisation;
 	}
 

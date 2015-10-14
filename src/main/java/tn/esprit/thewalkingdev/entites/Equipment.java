@@ -10,7 +10,7 @@ public class Equipment implements Serializable {
 	private int id_equipement;
 	private int quantity;
 	private static final long serialVersionUID = 1L;
-	private TeamLogistics teamLogistics;
+	private Team teamLogistics;
 	private Brand brand;
 	private TypeEquipment typeEquipment;
 
@@ -37,11 +37,11 @@ public class Equipment implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "teamLogistics")
-	public TeamLogistics getTeamLogistics() {
+	public Team getTeamLogistics() {
 		return teamLogistics;
 	}
 
-	public void setTeamLogistics(TeamLogistics teamLogistics) {
+	public void setTeamLogistics(Team teamLogistics) {
 		this.teamLogistics = teamLogistics;
 	}
 
