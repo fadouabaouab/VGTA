@@ -3,6 +3,7 @@ package tn.esprit.thewalkingdev.entites;
 import java.io.Serializable;
 import java.lang.String;
 import java.sql.Blob;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -10,24 +11,27 @@ import javax.persistence.*;
 public class Articles implements Serializable {
 
 	private int id_article;
-	private String name_article;
+	private String title;
 	private String text;
 	private static final long serialVersionUID = 1L;
 	private TeamMedia teamMedia;
-	private Blob picture;
+	private Blob image;
+	private Date pubDate;
 
 	public Articles() {
 	}
 
-	public Articles(int id_article, String name_article, String text,
-			TeamMedia teamMedia, Blob picture) {
 
-		this.id_article = id_article;
-		this.name_article = name_article;
+	public Articles(String title, String text, TeamMedia teamMedia, Blob image,
+			Date pubDate) {
+		super();
+		this.title = title;
 		this.text = text;
 		this.teamMedia = teamMedia;
-		this.picture = picture;
+		this.image = image;
+		this.pubDate = pubDate;
 	}
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,12 +43,12 @@ public class Articles implements Serializable {
 		this.id_article = id_article;
 	}
 
-	public String getName_article() {
-		return this.name_article;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setName_article(String name_article) {
-		this.name_article = name_article;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getText() {
@@ -65,12 +69,21 @@ public class Articles implements Serializable {
 		this.teamMedia = teamMedia;
 	}
 
-	public Blob getPicture() {
-		return picture;
+	public Blob getImage() {
+		return image;
 	}
 
-	public void setPicture(Blob picture) {
-		this.picture = picture;
+	public void setImage(Blob image) {
+		this.image = image;
 	}
 
+	public Date getPubDate() {
+		return pubDate;
+	}
+
+	public void setPubDate(Date pubDate) {
+		this.pubDate = pubDate;
+	}
+
+	
 }
