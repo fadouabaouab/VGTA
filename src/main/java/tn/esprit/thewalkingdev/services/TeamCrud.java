@@ -7,7 +7,6 @@ import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import tn.esprit.thewalkingdev.entites.Gamer;
 import tn.esprit.thewalkingdev.entites.Team;
 import tn.esprit.thewalkingdev.services.contract.TeamLocal;
 import tn.esprit.thewalkingdev.services.contract.TeamRemote;

@@ -2,35 +2,35 @@ package tn.esprit.thewalkingdev.entites;
 
 import java.io.Serializable;
 import java.lang.String;
-import java.sql.Blob;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.*;
 
 @Entity
-public class Articles implements Serializable {
+public class Article implements Serializable {
 
 	private int id_article;
 	private String title;
 	private String text;
-	private Date pubDate;
 	private static final long serialVersionUID = 1L;
-	private TeamMedia teamMedia;
-	private Blob picture;
+	private Team teamMedia;
+	private byte[]  image;
+	private Date pubDate;
 
-	public Articles() {
+	public Article() {
 	}
 
-	public Articles(int id_article, String title, String text,Date pubDate,
-			TeamMedia teamMedia, Blob picture) {
 
-		this.id_article = id_article;
+	public Article(String title, String text, Team teamMedia, byte[] image,
+			Date pubDate) {
+		super();
 		this.title = title;
 		this.text = text;
-		this.pubDate = pubDate;
 		this.teamMedia = teamMedia;
-		this.picture = picture;
+		this.image = image;
+		this.pubDate = pubDate;
 	}
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -57,7 +57,27 @@ public class Articles implements Serializable {
 	public void setText(String text) {
 		this.text = text;
 	}
-	
+
+	@ManyToOne
+	@JoinColumn(name = "teamMedia")
+	public Team getTeamMedia() {
+		return teamMedia;
+	}
+
+	public void setTeamMedia(Team teamMedia) {
+		this.teamMedia = teamMedia;
+	}
+
+	@Lob
+	@Basic(fetch=FetchType.LAZY)
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
 	public Date getPubDate() {
 		return pubDate;
 	}
@@ -66,22 +86,5 @@ public class Articles implements Serializable {
 		this.pubDate = pubDate;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "teamMedia")
-	public TeamMedia getTeamMedia() {
-		return teamMedia;
-	}
-
-	public void setTeamMedia(TeamMedia teamMedia) {
-		this.teamMedia = teamMedia;
-	}
-
-	public Blob getPicture() {
-		return picture;
-	}
-
-	public void setPicture(Blob picture) {
-		this.picture = picture;
-	}
-
+	
 }
