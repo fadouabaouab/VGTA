@@ -10,7 +10,7 @@ public class Equipment implements Serializable {
 	private int id_equipement;
 	private int quantity;
 	private static final long serialVersionUID = 1L;
-	private Team teamLogistics;
+	
 	private Brand brand;
 	private TypeEquipment typeEquipment;
 
@@ -35,15 +35,6 @@ public class Equipment implements Serializable {
 		this.quantity = quantity;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "teamLogistics")
-	public Team getTeamLogistics() {
-		return teamLogistics;
-	}
-
-	public void setTeamLogistics(Team teamLogistics) {
-		this.teamLogistics = teamLogistics;
-	}
 
 	@ManyToOne
 	@JoinColumn(name = "brand")
@@ -64,5 +55,10 @@ public class Equipment implements Serializable {
 		this.typeEquipment = typeEquipment;
 	}
 
+	@Override
+	public String toString() {
+		return  id_equipement + quantity  + brand.toString() + typeEquipment.toString();
+	}
+	
 	
 }

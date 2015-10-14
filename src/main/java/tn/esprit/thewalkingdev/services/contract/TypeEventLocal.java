@@ -18,4 +18,6 @@ public interface TypeEventLocal {
 	TypeEvent findTypeEventbyId(Integer idTypeEvent);
 
 	List<TypeEvent> findAllTypeEvent();
+
+	List<String> findAllLabelEvent();
 }
