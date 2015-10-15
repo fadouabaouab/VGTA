@@ -18,4 +18,6 @@ public interface ArticleLocal {
 	Article findArticlebyId(Integer idArticle);
 
 	List<Article> findAllArticles();
+	
+	List<Article> searchArticle(String keyword);
 }
