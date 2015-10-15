@@ -62,7 +62,7 @@ public class VenueCrud implements VenueRemote, VenueLocal {
 
 	@Override
 	public List<String> findAllLabelVenue() {
-		javax.persistence.Query query = entityManager.createQuery("select label from venue v");
+		javax.persistence.Query query = entityManager.createQuery("select v.label from Venue v");
 		
 		return query.getResultList();
 	}

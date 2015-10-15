@@ -161,5 +161,33 @@ public class Gamer implements Serializable {
 	public void setVotes(List<Vote> votes) {
 		this.votes = votes;
 	}
+
+	public Gamer(String lastName, String firstName, String email, Role role) {
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.email = email;
+		this.role = role;
+	}
+
+	public Gamer(String lastName, String firstName, String email, Role role,
+			Team team) {
+		super();
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.email = email;
+		this.role = role;
+		this.team = team;
+	}
+	public Gamer(String lastName, String firstName, String email, Role role,
+			String team) {
+		super();
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.email = email;
+		this.role = role;
+		team=team.getClass().getName() ;
+	}
+	
+	
 	
 }

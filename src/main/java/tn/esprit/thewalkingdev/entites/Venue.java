@@ -67,6 +67,11 @@ public class Venue implements Serializable {
 		this.events = events;
 	}
 
+	@Override
+	public String toString() {
+		return "Venue [label=" + label + ", adress=" + adress + "]";
+	}
+
 	
 
 }

@@ -3,7 +3,7 @@ package tn.esprit.thewalkingdev.services;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.management.Query;
+import javax.persistence.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -62,5 +62,7 @@ public class GamerCrud implements GamerRemote, GamerLocal {
 		return ((javax.persistence.Query) query).getResultList();
 
 	}
+	 
+
 
 }

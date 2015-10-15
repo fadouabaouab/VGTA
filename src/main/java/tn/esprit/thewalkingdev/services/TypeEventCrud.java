@@ -1,5 +1,6 @@
 package tn.esprit.thewalkingdev.services;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -61,6 +62,15 @@ public class TypeEventCrud implements TypeEventRemote,
 		javax.persistence.Query query = entityManager
 				.createQuery("select t from TypeEvent t");
 		return query.getResultList();
+	}
+
+	@Override
+	public List<String> findTypeEventBylabel() {
+	
+		javax.persistence.Query query = entityManager
+				.createQuery("select t.label from TypeEvent t");
+		return query.getResultList();
+		
 	}
 
 }
