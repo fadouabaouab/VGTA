@@ -3,11 +3,14 @@ package tn.esprit.thewalkingdev.entites;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -18,6 +21,15 @@ public class Gamer implements Serializable {
 	private int id;
 	private String firstName;
 	private Integer age;
+	private int numtel;
+	public int getNumtel() {
+		return numtel;
+	}
+
+	public void setNumtel(int numtel) {
+		this.numtel = numtel;
+	}
+	private byte[]  image;
 	private String email;
 	private String pwd;
 	private int rank;
@@ -150,6 +162,15 @@ public class Gamer implements Serializable {
 	public List<Trophy> getTrophies() {
 		return trophies;
 	}
+	@Lob
+	@Basic(fetch=FetchType.LAZY)
+	public byte[]  getImage() {
+		return image;
+	}
+	
+	public void setImage(byte[]  image) {
+		this.image = image;
+	}
 
 	public void setTrophies(List<Trophy> trophies) {
 		this.trophies = trophies;
@@ -161,33 +182,5 @@ public class Gamer implements Serializable {
 	public void setVotes(List<Vote> votes) {
 		this.votes = votes;
 	}
-
-	public Gamer(String lastName, String firstName, String email, Role role) {
-		this.lastName = lastName;
-		this.firstName = firstName;
-		this.email = email;
-		this.role = role;
-	}
-
-	public Gamer(String lastName, String firstName, String email, Role role,
-			Team team) {
-		super();
-		this.lastName = lastName;
-		this.firstName = firstName;
-		this.email = email;
-		this.role = role;
-		this.team = team;
-	}
-	public Gamer(String lastName, String firstName, String email, Role role,
-			String team) {
-		super();
-		this.lastName = lastName;
-		this.firstName = firstName;
-		this.email = email;
-		this.role = role;
-		team=team.getClass().getName() ;
-	}
-	
-	
 	
 }

@@ -24,6 +24,8 @@ public interface GamerRemote {
 	Gamer authentifiacation(String login, String password);
 
 	List<Gamer> searchlastname(String lastname);
-	
+
 	List<Gamer> searchfirstname(String firstname);
+
+	List<Gamer> displayNameGamer();
 }

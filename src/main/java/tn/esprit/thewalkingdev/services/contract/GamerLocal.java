@@ -25,4 +25,6 @@ public interface GamerLocal {
 	List<Gamer> searchlastname(String lastname);
 
 	List<Gamer> searchfirstname(String firstname);
+	
+	List<Gamer> displayNameGamer();
 }

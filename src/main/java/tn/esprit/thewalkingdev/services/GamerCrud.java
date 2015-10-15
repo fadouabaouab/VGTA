@@ -112,4 +112,12 @@ public class GamerCrud implements GamerRemote, GamerLocal {
 		 		 
 	}
 
+	@Override
+	public List<Gamer> displayNameGamer() {
+		Query query = (Query) entityManager
+				.createQuery("select g.firstName, g.lastName from Gamer g, Team t where t.id_team=g.team");
+
+		return query.getResultList();
+	}
+
 }
