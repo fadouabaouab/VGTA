@@ -182,5 +182,13 @@ public class Gamer implements Serializable {
 	public void setVotes(List<Vote> votes) {
 		this.votes = votes;
 	}
+
+	public Gamer(String lastName, String firstName, String email, Role role) {
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.email = email;
+		this.role = role;
+	}
+	
 	
 }
