@@ -28,4 +28,11 @@ public interface GamerRemote {
 	List<Gamer> searchfirstname(String firstname);
 
 	List<Gamer> displayNameGamer();
+	double calculNbGamerTeam1();
+
+	double calculNbGamerTeam2();
+
+	double calculNbGamerTeam3();
+
+	double calculNbGamerTeam4();
 }
