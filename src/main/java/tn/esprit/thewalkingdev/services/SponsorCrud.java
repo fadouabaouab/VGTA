@@ -54,4 +54,12 @@ public class SponsorCrud implements SponsorLocal,SponsorRemote{
 	
 	}
 
+	@Override
+	public List<Sponsor> searchSponsor(String keyword ) {
+		Query query = entityManager.createQuery("select a from Sponsor a where a.name_sponsor like :kw or a.name_contact_sponsor like :kw");
+		query.setParameter("kw", "%"+keyword+"%");
+				
+		return query.getResultList();
+	}
+
 }

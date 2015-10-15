@@ -15,4 +15,5 @@ public interface SponsorLocal {
 	Sponsor findSponsorById(Integer idSponsor);
 
 	List<Sponsor> findAllSponsors();
+	List<Sponsor> searchSponsor(String keyword);
 }
