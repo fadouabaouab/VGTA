@@ -2,6 +2,7 @@ package tn.esprit.thewalkingdev.entites;
 
 import java.io.Serializable;
 import java.lang.String;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +18,8 @@ public class Administrator implements Serializable {
 	}
 
 	@Id
-	public int getId() {
+	@GeneratedValue(strategy = GenerationType.AUTO)
+ 	public int getId() {
 		return this.id;
 	}
 

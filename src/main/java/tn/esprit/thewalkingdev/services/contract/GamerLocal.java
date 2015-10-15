@@ -17,4 +17,12 @@ public interface GamerLocal {
 	Gamer findGamerById(Integer idGamer);
 
 	List<Gamer> findAllGamers();
+
+	List<Gamer> searchemail(String email);
+
+	Gamer authentifiacation(String login, String password);
+
+	List<Gamer> searchlastname(String lastname);
+
+	List<Gamer> searchfirstname(String firstname);
 }
