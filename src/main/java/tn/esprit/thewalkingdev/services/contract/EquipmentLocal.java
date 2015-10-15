@@ -13,4 +13,6 @@ public interface EquipmentLocal {
 	Boolean deleteEquipement(Equipment equipment);
 	Equipment findEquipementById(Integer idEquipement);
 	List<Equipment> findAllEquipements();
+	List<Equipment> search(Integer keyword);
+	
 }

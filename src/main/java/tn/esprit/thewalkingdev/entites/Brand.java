@@ -22,7 +22,8 @@ public class Brand implements Serializable {
 
 	public Brand() {
 	}   
-	@Id    
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getIdMarque() {
 		return this.idMarque;
 	}
