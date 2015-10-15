@@ -19,4 +19,6 @@ public interface ArticleRemote {
 	Article findArticlebyId(Integer idArticle);
 
 	List<Article> findAllArticles();
+	
+	List<Article> searchArticle(String keyword);
 }

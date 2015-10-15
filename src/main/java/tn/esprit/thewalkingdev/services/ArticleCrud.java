@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import tn.esprit.thewalkingdev.entites.Article;
+import tn.esprit.thewalkingdev.entites.Team;
 import tn.esprit.thewalkingdev.services.contract.ArticleLocal;
 import tn.esprit.thewalkingdev.services.contract.ArticleRemote;
 
@@ -18,6 +19,9 @@ public class ArticleCrud implements ArticleLocal,ArticleRemote {
 	
 	@Override
 	public Boolean addArticle(Article article) {
+		Team t_media = new Team();
+		t_media.setId_team(2);
+		article.setTeamMedia(t_media);
 		entityManager.persist(article);
 		return true;
 	}
@@ -46,8 +50,17 @@ public class ArticleCrud implements ArticleLocal,ArticleRemote {
 
 	@Override
 	public List<Article> findAllArticles() {
-		Query query = entityManager.createQuery("select a from Articles a");
+		Query query = entityManager.createQuery("select a from Article a");
 		return query.getResultList();
 	}
 
+	@Override
+	public List<Article> searchArticle(String keyword){
+	Query query = entityManager.createQuery("select a from Article a where a.title like :kw or a.text like :kw");
+
+	query.setParameter("kw", "%"+keyword+"%");
+			
+	return query.getResultList();
+	}
+	
 }

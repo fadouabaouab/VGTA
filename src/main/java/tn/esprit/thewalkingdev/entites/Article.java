@@ -15,19 +15,21 @@ public class Article implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Team teamMedia;
 	private byte[]  image;
+	private String video;
 	private Date pubDate;
 
 	public Article() {
 	}
 
 
-	public Article(String title, String text, Team teamMedia, byte[] image,
+	public Article(String title, String text, Team teamMedia, String video,
 			Date pubDate) {
 		super();
 		this.title = title;
 		this.text = text;
 		this.teamMedia = teamMedia;
 		this.image = image;
+		this.video = video;
 		this.pubDate = pubDate;
 	}
 
@@ -77,6 +79,17 @@ public class Article implements Serializable {
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
+	
+
+	public String getVideo() {
+		return video;
+	}
+
+
+	public void setVideo(String video) {
+		this.video = video;
+	}
+
 
 	public Date getPubDate() {
 		return pubDate;
