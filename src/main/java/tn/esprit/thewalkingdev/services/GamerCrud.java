@@ -119,5 +119,44 @@ public class GamerCrud implements GamerRemote, GamerLocal {
 
 		return query.getResultList();
 	}
+	@Override
+	public double calculNbGamerTeam1() {
+		Query query = (Query) entityManager
+				.createQuery("select count(*) as Logistics from Gamer where team=1");
+		Long result1 = (Long) query.getSingleResult();
+		double res = result1.doubleValue();
+
+		return res;
+	}
+
+	@Override
+	public double calculNbGamerTeam2() {
+		Query query = (Query) entityManager
+				.createQuery("select count(*) as Media from Gamer where team=2");
+		Long result1 = (Long) query.getSingleResult();
+		double res = result1.doubleValue();
+
+		return res;
+	}
+
+	@Override
+	public double calculNbGamerTeam3() {
+		Query query = (Query) entityManager
+				.createQuery("select count(*) as Organisation from Gamer where team=3");
+		Long result1 = (Long) query.getSingleResult();
+		double res = result1.doubleValue();
+
+		return res;
+	}
+
+	@Override
+	public double calculNbGamerTeam4() {
+		Query query = (Query) entityManager
+				.createQuery("select count(*) as Sponsoring from Gamer where team=4");
+		Long result1 = (Long) query.getSingleResult();
+		double res = result1.doubleValue();
+
+		return res;
+	}
 
 }
