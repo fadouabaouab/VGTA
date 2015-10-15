@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Remote;
 
 import tn.esprit.thewalkingdev.entites.Brand;
+import tn.esprit.thewalkingdev.entites.Equipment;
 
 @Remote
 public interface BrandRemote {
@@ -13,4 +14,5 @@ public interface BrandRemote {
 	Boolean deleteBrand(Brand Brand);
 	Brand findBrandById(Integer idBrand);
 	List<Brand> findAllBrands();
+	List<Brand> search(String keyword);
 }

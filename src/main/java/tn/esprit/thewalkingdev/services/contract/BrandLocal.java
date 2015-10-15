@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Local;
 
 import tn.esprit.thewalkingdev.entites.Brand;
+import tn.esprit.thewalkingdev.entites.Equipment;
 
 @Local
 public interface BrandLocal {
@@ -13,4 +14,6 @@ public interface BrandLocal {
 	Boolean deleteBrand(Brand Brand);
 	Brand findBrandById(Integer idBrand);
 	List<Brand> findAllBrands();
+	List<Brand> search(String keyword);
+	
 }

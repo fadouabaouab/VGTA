@@ -2,6 +2,8 @@ package tn.esprit.thewalkingdev.services.contract;
 
 import java.util.List;
 
+import javafx.scene.chart.PieChart;
+
 import javax.ejb.Remote;
 
 import tn.esprit.thewalkingdev.entites.Equipment;
@@ -14,4 +16,7 @@ public interface EquipmentRemote {
 	Boolean deleteEquipement(Equipment equipment);
 	Equipment findEquipementById(Integer idEquipement);
 	List<Equipment> findAllEquipements();
+	List<Equipment> search(Integer keyword);
+	
+
 }
