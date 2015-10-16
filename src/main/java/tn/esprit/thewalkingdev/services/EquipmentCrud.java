@@ -2,14 +2,13 @@ package tn.esprit.thewalkingdev.services;
 
 import java.util.List;
 
-import javafx.scene.chart.PieChart;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import tn.esprit.thewalkingdev.entites.Equipment;
+import tn.esprit.thewalkingdev.entites.Team;
 import tn.esprit.thewalkingdev.services.contract.EquipmentLocal;
 import tn.esprit.thewalkingdev.services.contract.EquipmentRemote;
 
@@ -27,7 +26,9 @@ public class EquipmentCrud implements EquipmentRemote, EquipmentLocal {
 
 	@Override
 	public Boolean addEquipement(Equipment equipment) {
-
+		Team t = new Team();
+		t.setId_team(1);
+		equipment.setTeamLogistics(t);
 		entityManager.persist(equipment);
 		return true;
 
