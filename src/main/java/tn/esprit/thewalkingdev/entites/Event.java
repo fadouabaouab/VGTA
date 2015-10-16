@@ -14,7 +14,6 @@ public class Event implements Serializable {
 	private String name_event;
 	private Date date_event;
 	private int numberOfReservation;
-	private String owner;
 	private boolean streaming;
 	private boolean isTournament;
 	private List<Contribution> contributions;
@@ -28,7 +27,7 @@ public class Event implements Serializable {
 	}
 
 	public Event(int id_event, String name_event, Date date_event,
-			int numberOfReservation, String owner, boolean streaming,
+			int numberOfReservation, boolean streaming,
 			boolean isTournament, List<Contribution> contributions,
 			TypeEvent typeEvent, Venue venue, Team teamOrganisation) {
 
@@ -36,7 +35,6 @@ public class Event implements Serializable {
 		this.name_event = name_event;
 		this.date_event = date_event;
 		this.numberOfReservation = numberOfReservation;
-		this.owner = owner;
 		this.streaming = streaming;
 		this.isTournament = isTournament;
 		this.contributions = contributions;
@@ -47,14 +45,13 @@ public class Event implements Serializable {
 	
 
 	public Event(String name_event, Date date_event, int numberOfReservation,
-			String owner, boolean streaming, boolean isTournament,
+			boolean streaming, boolean isTournament,
 			List<Contribution> contributions, List<Trophy> trophies,
 			TypeEvent typeEvent, Venue venue, Team teamOrganisation) {
 		super();
 		this.name_event = name_event;
 		this.date_event = date_event;
 		this.numberOfReservation = numberOfReservation;
-		this.owner = owner;
 		this.streaming = streaming;
 		this.isTournament = isTournament;
 		this.contributions = contributions;
@@ -65,18 +62,25 @@ public class Event implements Serializable {
 	}
 
 	public Event(String name_event, Date date_event, int numberOfReservation,
-			String owner, boolean streaming, boolean isTournament,
+			 boolean streaming, boolean isTournament,
 			TypeEvent typeEvent, Venue venue, Team teamOrganisation) {
 		
 		this.name_event = name_event;
 		this.date_event = date_event;
 		this.numberOfReservation = numberOfReservation;
-		this.owner = owner;
 		this.streaming = streaming;
 		this.isTournament = isTournament;
 		this.typeEvent = typeEvent;
 		this.venue = venue;
 		this.teamOrganisation = teamOrganisation;
+	}
+	
+	@Override
+	public String toString() {
+		return "Event [name_event=" + name_event + ", date_event=" + date_event
+				+ ", numberOfReservation=" + numberOfReservation
+				+ ", typeEvent=" + typeEvent + ", venue=" + venue
+				+ ", teamOrganisation=" + teamOrganisation + "]";
 	}
 
 	@Id
@@ -113,13 +117,6 @@ public class Event implements Serializable {
 		this.numberOfReservation = numberOfReservation;
 	}
 
-	public String getOwner() {
-		return this.owner;
-	}
-
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
 
 	public boolean getStreaming() {
 		return this.streaming;

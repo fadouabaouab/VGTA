@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import tn.esprit.thewalkingdev.entites.Event;
+import tn.esprit.thewalkingdev.entites.Team;
 import tn.esprit.thewalkingdev.services.contract.EventLocal;
 import tn.esprit.thewalkingdev.services.contract.EventRemote;
 
@@ -25,7 +26,9 @@ public class EventCrud implements EventRemote, EventLocal {
 
 	@Override
 	public Boolean addEvent(Event event) {
-
+		Team teamOrganisation = new Team();
+		teamOrganisation.setId_team(3);
+		event.setTeamOrganisation(teamOrganisation);
 		entityManager.persist(event);
 		return true;
 
