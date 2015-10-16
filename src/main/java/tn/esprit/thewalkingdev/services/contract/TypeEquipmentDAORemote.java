@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
+import tn.esprit.thewalkingdev.entites.Brand;
 import tn.esprit.thewalkingdev.entites.TypeEquipment;;
 
 @Remote
@@ -13,4 +14,5 @@ public interface TypeEquipmentDAORemote {
 	Boolean deleteTypeEquipment(TypeEquipment typeEquipment);
 	TypeEquipment findTypeEquipmentById(Integer typeEquipment);
 	List<TypeEquipment> findAllTypeEquipment();
+	List<TypeEquipment> search(String keyword);
 }

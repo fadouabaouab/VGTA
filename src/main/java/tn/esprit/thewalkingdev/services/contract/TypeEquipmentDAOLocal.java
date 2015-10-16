@@ -13,4 +13,5 @@ public interface TypeEquipmentDAOLocal {
 	Boolean deleteTypeEquipment(TypeEquipment typeEquipment);
 	TypeEquipment findTypeEquipmentById(Integer typeEquipment);
 	List<TypeEquipment> findAllTypeEquipment();
+	List<TypeEquipment> search(String keyword);
 }

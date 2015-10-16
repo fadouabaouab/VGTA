@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import tn.esprit.thewalkingdev.entites.Brand;
 import tn.esprit.thewalkingdev.entites.TypeEquipment;
 import tn.esprit.thewalkingdev.services.contract.TypeEquipmentDAOLocal;
 import tn.esprit.thewalkingdev.services.contract.TypeEquipmentDAORemote;
@@ -59,6 +60,15 @@ public class TypeEquipmentCrud implements TypeEquipmentDAORemote, TypeEquipmentD
 	@Override
 	public List<TypeEquipment> findAllTypeEquipment() {
 		Query query = entityManager.createQuery("select e from TypeEquipment e");
+		return query.getResultList();
+	}
+	@Override
+	public List<TypeEquipment> search(String keyword) {
+		Query query = entityManager.createQuery("select e from TypeEquipment e where  e.typeEq like :kw");
+
+		query.setParameter("kw", "%"+keyword+"%");
+		
+				
 		return query.getResultList();
 	}
 
