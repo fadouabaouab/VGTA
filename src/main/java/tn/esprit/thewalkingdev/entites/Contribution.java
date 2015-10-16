@@ -78,4 +78,11 @@ public class Contribution implements Serializable {
 	public Contribution() {
 	}
 
+	@Override
+	public String toString() {
+		return "Contribution [event=" + event.toString() + ", sponsor=" + sponsor.toString()
+				+ ", description=" + description + ", amount=" + amount
+				+ ", contributionPk=" + contributionPk + "]";
+	}
+
 }

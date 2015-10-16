@@ -3,6 +3,7 @@ package tn.esprit.thewalkingdev.services.contract;
 import java.util.List;
 
 import javax.ejb.Remote;
+
 import tn.esprit.thewalkingdev.entites.Sponsor;
 
 @Remote
@@ -17,4 +18,6 @@ public interface SponsorRemote {
 	Sponsor findSponsorById(Integer idSponsor);
 
 	List<Sponsor> findAllSponsors();
+	List<Sponsor> searchSponsor(String keyword);
+
 }

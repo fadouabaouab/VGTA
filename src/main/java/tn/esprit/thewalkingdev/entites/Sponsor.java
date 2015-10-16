@@ -55,14 +55,18 @@ public class Sponsor implements Serializable {
 //				+ ", name_contact_sponsor=" + name_contact_sponsor + ", email="
 //				+ email + "]";
 //	}
-
+/*
 	@Override
 	public String toString() {
 		return "Sponsor [id_sponsor=" + id_sponsor + ", name_sponsor="
-				+ name_sponsor + ", name_contact_sponsor="
-				+ name_contact_sponsor + ", email=" + email + "]";
-	}
-
+				+ name_sponsor + ", contributions=" + contributions.toString()
+				+ ", name_contact_sponsor=" + name_contact_sponsor + ", email="
+				+ email + ", dateStart=" + dateStart + ", dateEnd=" + dateEnd
+				+ ", teamSponsor=" + teamSponsor.toString() + "]";
+	}*/
+	@Override
+	public String toString() {
+		return name_sponsor;}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getId_sponsor() {
