@@ -26,7 +26,6 @@ public interface GamerLocal {
 
 	List<Gamer> searchfirstname(String firstname);
 	
-	List<Gamer> displayNameGamer();
 	double calculNbGamerTeam1();
 
 	double calculNbGamerTeam2();
